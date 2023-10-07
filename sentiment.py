@@ -30,7 +30,7 @@ dftext['text_tokens'] = dftext[0].apply(text_process)
 
 df_pos = dftext[dftext[1] == 'pos']
 pos_word_all = " ".join(text for text in df_pos['text_tokens'])
-st.write(pos_word_all)
+#st.write(pos_word_all)
 
 import matplotlib as mpl
 mpl.font_manager.fontManager.addfont('THSarabunNew.ttf')
