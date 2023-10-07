@@ -82,4 +82,4 @@ my_text = 'ไม่ตรงปกครับ'
 my_tokens = text_process(my_text)
 my_bow = cvec.transform(pd.Series([my_tokens]))
 my_predictions = lr.predict(my_bow)
-st.write(my_predictions)
+#st.write(my_predictions)
