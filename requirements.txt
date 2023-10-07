@@ -5,5 +5,4 @@ Pillow
 pandas
 pythainlp
 scikit-learn
-sklearn
 wordcloud
