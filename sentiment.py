@@ -67,7 +67,7 @@ cvec.fit_transform(X_train['text_tokens'])
 cvec.vocabulary_
 
 train_bow = cvec.transform(X_train['text_tokens'])
-pd.DataFrame(train_bow.toarray(), columns=cvec.get_feature_names_out(), index=X_train['text_tokens'])
+#pd.DataFrame(train_bow.toarray(), columns=cvec.get_feature_names_out(), index=X_train['text_tokens'])
 
 from sklearn.linear_model import LogisticRegression
 lr = LogisticRegression()
@@ -82,4 +82,4 @@ my_text = 'ไม่ตรงปกครับ'
 my_tokens = text_process(my_text)
 my_bow = cvec.transform(pd.Series([my_tokens]))
 my_predictions = lr.predict(my_bow)
-#st.write(my_predictions)
+st.write(my_predictions)
