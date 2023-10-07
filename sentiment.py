@@ -72,13 +72,8 @@ test_bow = cvec.transform(X_test['text_tokens'])
 test_predictions = lr.predict(test_bow)
 print(classification_report(test_predictions, y_test))
 
-my_text = 'ไม่ตรงปกส่งไวครับ'
+my_text = 'ไม่ตรงปกครับ'
 my_tokens = text_process(my_text)
 my_bow = cvec.transform(pd.Series([my_tokens]))
 my_predictions = lr.predict(my_bow)
 st.write(my_predictions)
-
-
-
-
-
