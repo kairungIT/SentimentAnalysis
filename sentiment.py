@@ -40,7 +40,7 @@ wordcloud = WordCloud(stopwords=thai_stopwords, background_color = 'white', max_
 mpl.figure.Figure(figsize = (30,8))
 plt.imshow(wordcloud)
 plt.axis('off')
-st.pyplot()
+#st.pyplot()
 #plt.show()
 
 df_neg = dftext[dftext[1] == 'neg']
@@ -49,7 +49,7 @@ wordcloud = WordCloud(stopwords=thai_stopwords, background_color = 'white', max_
 plt.figure(figsize = (30,8))
 plt.imshow(wordcloud)
 plt.axis('off')
-st.pyplot()
+#st.pyplot()
 #plt.show()
 
 
