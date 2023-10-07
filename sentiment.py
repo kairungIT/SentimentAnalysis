@@ -32,12 +32,12 @@ df_pos = dftext[dftext[1] == 'pos']
 pos_word_all = " ".join(text for text in df_pos['text_tokens'])
 st.write(pos_word_all)
 
-#import matplotlib as mpl
-plt.font_manager.fontManager.addfont('THSarabunNew.ttf')
+import matplotlib as mpl
+mpl.font_manager.fontManager.addfont('THSarabunNew.ttf')
 reg = r"[ก-๙a-zA-Z']+"
 fp = 'THSarabunNew.ttf'
 wordcloud = WordCloud(stopwords=thai_stopwords, background_color = 'white', max_words=2000, height = 2000, width=4000, font_path=fp, regexp=reg).generate(pos_word_all)
-plt.figure(figsize = (30,8))
+mpl.figure.Figure(figsize = (30,8))
 plt.imshow(wordcloud)
 plt.axis('off')
 plt.show()
