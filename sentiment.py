@@ -81,10 +81,10 @@ test_predictions = lr.predict(test_bow)
 my_text=st.text_area("กรุณาป้อนความคิดเห็นสำหรับใช้ในการวิเคราะห์")
 
 if st.button("วิเคราะห์ความคิดเห็น"):
-   my_tokens = text_process(my_text)
-   my_bow = cvec.transform(pd.Series([my_tokens]))
-   my_predictions = lr.predict(my_bow)
-   st.write(my_predictions)    
-   st.button("ไม่วิเคราะห์ความคิดเห็น")
+    my_tokens = text_process(my_text)
+    my_bow = cvec.transform(pd.Series([my_tokens]))
+    my_predictions = lr.predict(my_bow)
+    st.write(my_predictions)    
+    st.button("ไม่วิเคราะห์ความคิดเห็น")
 else:
     st.button("ไม่วิเคราะห์ความคิดเห็น")
