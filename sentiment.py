@@ -37,19 +37,19 @@ mpl.font_manager.fontManager.addfont('THSarabunNew.ttf')
 reg = r"[ก-๙a-zA-Z']+"
 fp = 'THSarabunNew.ttf'
 wordcloud = WordCloud(stopwords=thai_stopwords, background_color = 'white', max_words=2000, height = 2000, width=4000, font_path=fp, regexp=reg).generate(pos_word_all)
-mpl.figure.Figure(figsize = (30,8))
+fg1=mpl.figure.Figure(figsize = (30,8))
 plt.imshow(wordcloud)
 plt.axis('off')
-st.pyplot()
+st.pyplot(fg1)
 plt.show()
 
 df_neg = dftext[dftext[1] == 'neg']
 neg_word_all = " ".join(text for text in df_neg['text_tokens'])
 wordcloud = WordCloud(stopwords=thai_stopwords, background_color = 'white', max_words=2000, height = 2000, width=4000, font_path=fp, regexp=reg).generate(neg_word_all)
-plt.figure(figsize = (30,8))
+fg2=plt.figure(figsize = (30,8))
 plt.imshow(wordcloud)
 plt.axis('off')
-st.pyplot()
+st.pyplot(fg2)
 plt.show()
 
 
