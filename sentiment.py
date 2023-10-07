@@ -59,7 +59,7 @@ plt.show()
 
 from sklearn.feature_extraction.text import CountVectorizer
 cvec = CountVectorizer(analyzer=lambda x:x.split(' '))
-cvec.fit_transform(X_train['text_tokens'])
+
 
 my_text=st.text_area("กรุณาป้อนความคิดเห็นสำหรับใช้ในการวิเคราะห์")
 
