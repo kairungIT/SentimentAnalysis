@@ -83,8 +83,11 @@ my_text=st.text_area("กรุณาป้อนความคิดเห็�
 if st.button("วิเคราะห์ความคิดเห็น"):
     my_tokens = text_process(my_text)
     my_bow = cvec.transform(pd.Series([my_tokens]))
-    my_predictions = lr.predict(my_bow)
-    st.write(my_predictions)    
+    filename = 'lr_model.pkl'
+    loaded_model = pickle.load(open(filename, 'rb'))
+    my_bow = cvec.transform(pd.Series([my_tokens]))
+    my_predictions = loaded_model.predict(my_bow)
+    my_predictions  
     st.button("ไม่วิเคราะห์ความคิดเห็น")
 else:
     st.button("ไม่วิเคราะห์ความคิดเห็น")
