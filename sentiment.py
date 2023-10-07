@@ -4,7 +4,9 @@ import pythainlp
 from pythainlp.corpus.common import thai_stopwords
 from pythainlp import word_tokenize
 from wordcloud import WordCloud, STOPWORDS
+#import matplotlib as plt
 import matplotlib.pyplot as plt
+
 
 column_names=["text"]
 # Add header row while reading a CSV file
@@ -44,7 +46,7 @@ plt.show()
 df_neg = dftext[dftext[1] == 'neg']
 neg_word_all = " ".join(text for text in df_neg['text_tokens'])
 wordcloud = WordCloud(stopwords=thai_stopwords, background_color = 'white', max_words=2000, height = 2000, width=4000, font_path=fp, regexp=reg).generate(neg_word_all)
-fg2=mpl.figure.Figure(figsize = (30,8))
+fg2=plt.figure(figsize = (30,8))
 plt.imshow(wordcloud)
 plt.axis('off')
 st.pyplot(fg2)
