@@ -40,8 +40,8 @@ wordcloud = WordCloud(stopwords=thai_stopwords, background_color = 'white', max_
 mpl.figure.Figure(figsize = (30,8))
 plt.imshow(wordcloud)
 plt.axis('off')
-#st.pyplot()
-#plt.show()
+st.pyplot()
+plt.show()
 
 df_neg = dftext[dftext[1] == 'neg']
 neg_word_all = " ".join(text for text in df_neg['text_tokens'])
@@ -49,8 +49,8 @@ wordcloud = WordCloud(stopwords=thai_stopwords, background_color = 'white', max_
 plt.figure(figsize = (30,8))
 plt.imshow(wordcloud)
 plt.axis('off')
-#st.pyplot()
-#plt.show()
+st.pyplot()
+plt.show()
 
 
 from sklearn.model_selection import train_test_split
