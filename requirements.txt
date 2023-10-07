@@ -6,3 +6,4 @@ pandas
 pythainlp
 scikit-learn
 wordcloud
+sklearn

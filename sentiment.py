@@ -4,9 +4,7 @@ import pythainlp
 from pythainlp.corpus.common import thai_stopwords
 from pythainlp import word_tokenize
 from wordcloud import WordCloud, STOPWORDS
-import matplotlib as plt
-
-
+#import matplotlib as plt
 import matplotlib.pyplot as plt
 
 
@@ -28,17 +26,18 @@ def text_process(text):
                      if word.lower not in thai_stopwords)
     return final
 
-dftext['text_tokens'] = dftext[0].apply(text_process)
+dftext['text_tokens'] = dftext[0].apply(text_process())
 
 df_pos = dftext[dftext[1] == 'pos']
 pos_word_all = " ".join(text for text in df_pos['text_tokens'])
+st.write(pos_word_all)
 
 #import matplotlib as mpl
-plt.font_manager.fontManager.addfont('THSarabunChula-Regular.ttf')
+plt.font_manager.fontManager.addfont('./THSarabunChula-Regular.ttf')
 reg = r"[ก-๙a-zA-Z']+"
-fp = 'THSarabunChula-Regular.ttf'
+fp = './THSarabunChula-Regular.ttf'
 wordcloud = WordCloud(stopwords=thai_stopwords, background_color = 'white', max_words=2000, height = 2000, width=4000, font_path=fp, regexp=reg).generate(pos_word_all)
-plt.figure.Figure(figsize = (30,8))
+plt.figure(figsize = (30,8))
 plt.imshow(wordcloud)
 plt.axis('off')
 plt.show()
@@ -46,7 +45,7 @@ plt.show()
 df_neg = dftext[dftext[1] == 'neg']
 neg_word_all = " ".join(text for text in df_neg['text_tokens'])
 wordcloud = WordCloud(stopwords=thai_stopwords, background_color = 'white', max_words=2000, height = 2000, width=4000, font_path=fp, regexp=reg).generate(neg_word_all)
-mpl.figure.Figure(figsize = (30,8))
+plt.figure(figsize = (30,8))
 plt.imshow(wordcloud)
 plt.axis('off')
 plt.show()
@@ -77,7 +76,7 @@ my_text = 'ตรงปกส่งไวครับ'
 my_tokens = text_process(my_text)
 my_bow = cvec.transform(pd.Series([my_tokens]))
 my_predictions = lr.predict(my_bow)
-my_predictions
+st.write(my_predictions)
 
 
 
