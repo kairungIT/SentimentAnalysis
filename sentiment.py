@@ -46,12 +46,11 @@ plt.show()
 df_neg = dftext[dftext[1] == 'neg']
 neg_word_all = " ".join(text for text in df_neg['text_tokens'])
 wordcloud = WordCloud(stopwords=thai_stopwords, background_color = 'white', max_words=2000, height = 2000, width=4000, font_path=fp, regexp=reg).generate(neg_word_all)
-fg2=plt.figure(figsize = (30,8))
+fg2=mpl.figure.Figure(figsize = (30,8))
 plt.imshow(wordcloud)
 plt.axis('off')
 st.pyplot(fg2)
 plt.show()
-
 
 from sklearn.model_selection import train_test_split
 X = dftext[['text_tokens']]
