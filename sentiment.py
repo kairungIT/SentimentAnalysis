@@ -4,9 +4,7 @@ import pythainlp
 from pythainlp.corpus.common import thai_stopwords
 from pythainlp import word_tokenize
 from wordcloud import WordCloud, STOPWORDS
-#import matplotlib as plt
 import matplotlib.pyplot as plt
-
 
 column_names=["text"]
 # Add header row while reading a CSV file
