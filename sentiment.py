@@ -16,7 +16,7 @@ dftext=pd.DataFrame(df2)
 dftext=dftext.iloc[:,0:2]
 st.bar_chart(dftext[1].value_counts())
 thai_stopwords = list(thai_stopwords())
-st.write(thai_stopwords)
+#st.write(thai_stopwords)
 
 def text_process(text):
     final = "".join(u for u in text if u not in ("?", ".", ";", ":", "!", '"', "ๆ", "ฯ"))
