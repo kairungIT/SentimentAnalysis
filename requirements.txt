@@ -7,4 +7,3 @@ pythainlp
 scikit-learn
 wordcloud
 sklearn
-pickle
