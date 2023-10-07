@@ -57,15 +57,17 @@ plt.axis('off')
 st.pyplot(fg2)
 plt.show()
 
-
+from sklearn.feature_extraction.text import CountVectorizer
+cvec = CountVectorizer(analyzer=lambda x:x.split(' '))
+cvec.fit_transform(X_train['text_tokens'])
 
 my_text=st.text_area("กรุณาป้อนความคิดเห็นสำหรับใช้ในการวิเคราะห์")
 
 if st.button("วิเคราะห์ความคิดเห็น"):
-    my_tokens = text_process(my_text)
-    my_bow = cvec.transform(pd.Series([my_tokens]))
     filename = 'lr_model.pkl'
     loaded_model = pickle.load(open(filename, 'rb'))
+
+    my_tokens = text_process(my_text)
     my_bow = cvec.transform(pd.Series([my_tokens]))
     my_predictions = loaded_model.predict(my_bow)
     my_predictions  
