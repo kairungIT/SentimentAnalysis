@@ -11,11 +11,15 @@ def load_lottieurl(url: str):
         return None
     return r.json()
 
+
 st.header("การวิเคราะห์ความรู้สึกภาษาไทย")
 st.subheader("Kairung Hengpraprohm")
-st.image('./pic/kairung.jpg')
 
-lot3="https://lottie.host/2e099151-4397-40ad-ae7b-249bbaf1e8df/gluEhZplO8.json"
-lottie3 = load_lottieurl(lot3)
-st_lottie(lottie3)
+col1, col2 = st.columns(2)
+with col1:
+    lot3="https://lottie.host/defef63f-5b59-455d-a6e0-ff03f2791104/t43d8wbLKq.json"
+    lottie3 = load_lottieurl(lot3)
+    st_lottie(lottie3)
+with col2:
+    st.image('./pic/kairung.jpg')
 st.balloons()
