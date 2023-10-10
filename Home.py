@@ -16,7 +16,7 @@ st.subheader("Kairung Hengpraprohm")
 col1, col2 = st.columns(2)
 with col1:
     st.image('./pic/kairung.jpg')
-    lot3="https://lottie.host/defef63f-5b59-455d-a6e0-ff03f2791104/t43d8wbLKq.json"
+    lot3="https://lottie.host/9d7858db-0b59-4395-ae0f-b57203577235/vTJKGelBz0.json"
     lottie3 = load_lottieurl(lot3)
     st_lottie(lottie3)
 with col2:
