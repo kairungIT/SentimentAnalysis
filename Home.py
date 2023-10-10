@@ -21,5 +21,5 @@ with col1:
     lottie3 = load_lottieurl(lot3)
     st_lottie(lottie3)
 with col2:
-    st.image('./pic/kairung.jpg')
+    st.image('./pic/DS1.jpg')
 st.balloons()
