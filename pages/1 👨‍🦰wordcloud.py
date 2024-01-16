@@ -15,7 +15,9 @@ df = pd.read_csv('./test.csv', names=column_names)
 df2=df['text'].str.split(pat="\t",expand=True)
 dftext=pd.DataFrame(df2)
 dftext=dftext.iloc[:,0:2]
+
 st.bar_chart(dftext[1].value_counts())
+
 thai_stopwords = list(thai_stopwords())
 #st.write(thai_stopwords)
 
@@ -34,6 +36,7 @@ pos_word_all = " ".join(text for text in df_pos['text_tokens'])
 #st.write(pos_word_all)
 
 st.header("Positive ")
+
 import matplotlib as mpl
 mpl.font_manager.fontManager.addfont('THSarabunNew.ttf')
 reg = r"[ก-๙a-zA-Z']+"
